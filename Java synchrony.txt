@@ -1,0 +1,426 @@
+1.What is Encapsulation?
+
+The meaning of Encapsulation, is to make sure that "sensitive" data is hidden from users. To achieve this, you must:
+declare class variables/attributes as private
+provide public get and set methods to access and update the value of a private variable
+
+The main goals of encapsulation are to:
+
+Data Hiding:
+Encapsulation hides the internal details of an object's state from the outside world. The internal representation of the object's data is kept private, and access to it is controlled through public methods (getters and setters).
+
+Controlled Access:
+Access to the internal state of an object is controlled through access modifiers (e.g., public, private, protected). This allows the class to define how its data should be accessed and modified.
+
+
+2.What is Abstraction?
+
+abstraction is the process of hiding certain details and showing only essential information to the user.
+Abstraction can be achieved with either abstract classes or interfaces 
+
+The abstract keyword is a non-access modifier, used for classes and methods:
+
+Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).
+
+Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the subclass (inherited from).
+
+
+3.What are access specifiers? What is their significance in OOPs?
+
+Access specifiers are keywords in object-oriented programming languages that set the accessibility of classes, methods, and other members. Access modifiers are a specific part of programming language syntax used to facilitate the encapsulation of components ¹. The most common access specifiers are **public**, **protected**, and **private**. 
+
+Access specifiers play a crucial role in **encapsulation** in object-oriented programming. Encapsulation is a fundamental concept in OOP that refers to the bundling of data and methods that operate on that data within one unit ². Access specifiers allow encapsulation by controlling the visibility of the members of a class. 
+
+Here's a brief overview of the three access specifiers:
+
+- **Public**: Members declared as public are accessible from anywhere in the program.
+- **Protected**: Members declared as protected are accessible from within the class and its subclasses.
+- **Private**: Members declared as private are accessible only from within the class.
+
+Access specifiers are important because they allow you to control the visibility of your class members and protect them from being accessed or modified by other parts of the program. This helps to prevent bugs and makes your code more secure and maintainable. 
+
+In Java, **method overloading** and **method overriding** are two ways to achieve **polymorphism**, which is the ability of an object to take on many forms . 
+
+4.What is the difference between overloading and overriding?
+
+**Method overloading** is a type of **compile-time polymorphism** that allows you to define multiple methods with the same name in the same class, as long as they have different parameter lists. The compiler determines which method to call based on the number and types of arguments passed to it. Method overloading is useful when you want to provide different implementations of a method for different types of input.
+
+**Method overriding** is a type of **run-time polymorphism** that allows you to provide a specific implementation of a method that is already provided by its parent class. To override a method, you define a new implementation of the method in a subclass with the same name, return type, and parameter list as the original method. When you call the method on an object of the subclass, the new implementation is called instead of the original implementation in the parent class. Method overriding is useful when you want to modify the behavior of a method in a subclass.
+
+Here are some key differences between method overloading and method overriding:
+
+| **Method Overloading** | **Method Overriding** |
+|-----------------------|------------------------|
+| Occurs within the same class | Occurs in two classes with inheritance relationships |
+| Methods must have the same name and different signatures | Methods must have the same name and same signature |
+| The return type can or cannot be the same, but we just have to change the parameter | The return type must be the same or co-variant |
+| Static binding is being used for overloaded methods | Dynamic binding is being used for overriding methods |
+| Poor performance due to compile-time polymorphism | Better performance due to run-time polymorphism |
+
+5.What is Constructor?
+
+In object-oriented programming, a constructor is a special method that is called when an object of a class is created 
+constructors are used for initialization of objects
+There are two types
+
+no-argument(default) constructor
+parameterised constructor
+
+A default constructor is a constructor that takes no arguments, while a parameterized constructor takes one or more arguments 
+
+6.What is collection
+Explain various interfaces used in Collection framework?
+
+Collection is a framework that provides an architecture to store and manipulate the group of objects
+In Java, collections are frameworks that provides classes and interfaces to store, manipulate, and manage groups of objects. Some key interfaces in the Java Collections Framework include:
+
+> Collection:The collection interface is the interface which is implemented by all the classes in the collection framework.This is the root interface of the collection hierarchy. It defines the basic operations that all collections should support, such as adding and removing elements. The List, Set, and Queue interfaces extend the Collection interface.
+
+> List: List interface is the child interface of collection interface.This interface represents an ordered collection of elements, where each element can be accessed by its index.It can have duplicate values. The ArrayList and LinkedList classes are implementations of the List interface.
+
+ ArrayList:ArrayList class implements the List interface.It uses a dynamic array to store the duplicate element of different data types.It maintains the    insertion order.
+
+ ArrayList<data-type> list1=new ArrayList();
+ 
+ LinkedList: LinkedList class implements the List interface.It uses a doubly linked list internally to store the elements.It maintains the insertion order.
+ Linked list stores in items in container.the list has a link to the first container and each container has a link to the next container in the list.
+ methods in LinkedList:addFirst(),addLast(),removeFirst(),removeLas()
+
+ LinkedList<data-type> list2=new LinkedList();
+ 
+> Set: This interface represents a collection of unique elements, where the order of the elements is not important. The HashSet, TreeSet, and LinkedHashSet classes are implementations of the Set interface.
+
+> Map: This interface represents a collection of key-value pairs, where each key is unique. The HashMap, TreeMap, and LinkedHashMap classes are implementations of the Map interface.
+
+> Queue: This interface represents a collection of elements that can be accessed in a specific order, such as first-in-first-out (FIFO) or last-in-first-out (LIFO). The PriorityQueue and ArrayDeque classes are implementations of the Queue interface.
+
+> Deque: This interface represents a double-ended queue, which allows elements to be added or removed from both ends. The ArrayDeque and LinkedList classes are implementations of the Deque interface.
+
+> SortedSet: This interface represents a set of elements that are sorted in a specific order. The TreeSet class is an implementation of the SortedSet interface.
+
+7.What is the difference between List and Set?
+
+List: Maintains the order of elements, allowing duplicates. Elements are stored in the order they were added.
+Set: Does not maintain any specific order of elements. It focuses on uniqueness and does not allow duplicates.
+
+The List interface is implemented by classes such as ArrayList, LinkedList. The Set interface is implemented by classes such as HashSet, TreeSet, and LinkedHashSet.
+
+8.What is the difference between Set and Map?
+
+Set: A collection of unique elements, where each element is distinct, and duplicates are not allowed.
+Map: A collection of key-value pairs, where each key is associated with a value. Keys are unique within the Map, but values may be duplicated.
+
+The Set interface is implemented by classes such as HashSet, TreeSet, and LinkedHashSet. The Map interface is implemented by classes such as HashMap, TreeMap, and LinkedHashMap.
+A Set is an unordered collection of elements, where the order of the elements is not important. In contrast, a Map is an ordered collection of key-value pairs, where the order is determined by the keys.
+
+9.What is the difference between equals() method and == operator?
+
+The main difference between the two is that == compares the memory location or address of two objects in the heap, while equals() compares the content of two objects 
+
+The == operator is used to check if two objects are the same object in memory, meaning they have the same memory address. This is also known as reference equality. If two objects have the same memory address, then they are equal using the == operator. However, if two objects have different memory addresses, then they are not equal using the == operator.
+
+The equals() method, on the other hand, is used to check if two objects have the same content. This is also known as value equality 1. The equals() method is defined in the Object class and can be overridden by other classes to provide a custom implementation of equality 1. By default, the equals() method checks if two objects have the same memory address, just like the == operator. However, if the equals() method is overridden, it can provide a custom implementation of equality based on the content of the objects
+
+11.What are the  changess in 3.0 and 4.0 versions in selenium ?
+
+Selenium 3 Architecture is made up of four major components:
+
+Selenium Client library / Language Bindings
+JSON wire protocol over HTTP
+Browser Drivers
+Browsers
+Selenium Client Library connects with Browser Drivers and Browsers using the JSON (JavaScript Object Notation) Wire Protocol. 
+
+Selenium 4 Architecture:
+
+W3C protocol was introduced because all the web browsers followed the W3C standards and also all the browser drivers followed the W3C standards. To standardise the communication, JSON wire protocol was replaced by W3C.
+
+Chrome Driver: In Selenium 4, chromedriver class extends to Chromium Driver, which has some predefined methods to access the dev tool. In Selenium 3, chromedriver directly extended Remote WebDriver class.
+
+Optimized Selenium Grid in Selenium 4: Unlike Selenium 3, testers would no longer be required to start the Hub and Node jars every time they want to perform automation testing1.
+
+Selenium 4 IDE: In Selenium 3 and older Selenium versions, the Selenium IDE was only available as a Firefox extension with limited features. In Selenium 4, the IDE has become available for widely used browsers such as Chrome (as a Chrome extension). It is also expected to become available as a plugin or web extension for MS Edge soon4.
+
+Relative Locators
+Relative Locators (above, below, toRightof,toLeftof, near) have been introduced in Selenium 4 which help to identify elements ‘relative’ to a particular element in DOM. Unlike Selenium 3, we don’t have to use a series of findelement commands to locate the surrounding elements.
+
+Actions Class
+There are a few methods that are newly added to the actions class in Selenium 4 such as ContextClick(), Click(), ClickAndHold(), doubleClick(), and release(). 
+
+12.What do you mean by XPath
+
+It is one of the locator which is used to identify the location of the webelement by using attribute,visibletext and tagname.
+XPath is mainly used to locate elements on a web page.
+
+There are 2 types
+ Absolute xpath(/):Specifies the complete path from the root element to the desired element.
+ Relative xpath(//):forward traversing from parent to any child.
+
+13.What is the difference between findElement() and findElements()?
+
+| FindElement | FindElements |
+|-----------------------|------------------------|
+| The return type of findelement is webelement | The return type of findelements is list of webelement |
+| findelement always gives the first matching webelement | findelements gives all the matching webelements|
+| findElement() throws a NoSuchElementException if the element is not found|while findElements() returns an empty list if no matching element is found  |
+
+14.How to capture screenshot?
+
+To take screenshot in automation we have to add apache common io jarfile to our project.Because by default we are taking screnshot in java format.If we want to convert that in the form of picture format we need the help of apache common io.
+
+TakesScreenshot scrShot = ((TakesScreenshot)webdriver);
+File SrcFile=scrShot.getScreenshotAs(OutputType.FILE);
+File DestFile=new File(fileWithPath);
+FileUtils.copyFile(SrcFile, DestFile);
+
+To capture a screenshot in Selenium, you can use the TakesScreenshot interface provided by Selenium WebDriver.
+The TakesScreenshot interface is used to convert the WebDriver object into a screenshot.
+The getScreenshotAs method is called to capture the screenshot as a file.
+The Apache Commons IO library (FileUtils) is used to copy the screenshot file to a specified location.
+
+15.How to handle browser notifications?
+
+To handle browser notifications in Selenium, you can use the ChromeOptions class to disable notifications.
+
+        System.setProperty("webdriver.chrome.driver", "C:\\chromedriver.exe");
+        // Create a new instance of the ChromeOptions
+        ChromeOptions options = new ChromeOptions();
+        // Disable notifications
+        options.addArguments("--disable-notifications");
+        // Create a new instance of the ChromeDriver with the ChromeOptions
+        WebDriver driver = new ChromeDriver(options);
+
+If you cannot or do not want to disable notifications and need to interact with them during test execution, you can use the WebDriverWait and ExpectedConditions classes to wait for the presence of the notification element and handle it accordingly.
+
+        WebDriverWait wait = new WebDriverWait(driver, 10);
+        WebElement notificationElement = wait.until(ExpectedConditions.presenceOfElementLocated(By.xpath("//your/notification/element")));
+
+        // Perform actions based on the notification, e.g., click "Allow" or "Block"
+        if (notificationElement.isDisplayed()) {
+            notificationElement.click(); // Adjust this based on your notification behavior
+        }
+
+16.What is the syntax for waits in selenium 4
+
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("example")));
+
+17.Which method is faster in Xpath?
+
+
+18.What is abstract class?
+Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).
+Abstract classes are declared using the abstract keyword. They can have both abstract (incomplete) methods and concrete (fully implemented) methods
+
+19.Difference between abstract class & interface class?
+
+In Interface, a class can implement multiple interfaces, whereas the class can inherit only one Abstract Class.
+In Interface does not have access modifiers. Everything defined inside the Interface is assumed to have a public modifier, whereas Abstract Class can have an access modifier.
+Abstract class can have abstract and non abstract methods whereas interface can have only abstract methods.
+
+20.Which build you were prefer to use for the dependancy?
+21.What are the oops concept?
+
+  1.Encapsulation:
+
+The meaning of Encapsulation, is to make sure that "sensitive" data is hidden from users. To achieve this, you must:
+
+declare class variables/attributes as private
+provide public get and set methods to access and update the value of a private variable
+
+  2.Java Inheritance (Subclass and Superclass):
+
+In Java, it is possible to inherit attributes and methods from one class to another. We group the "inheritance concept" into two categories:
+
+subclass (child) - the class that inherits from another class
+superclass (parent) - the class being inherited from
+To inherit from a class, use the extends keyword.
+
+super():is used to call the constructor of super class from sub class
+
+types
+Single level inheritance: inheritance of one level
+Multi level inheritance: inheritance of more than one level
+Heirarchial inheritance:if the superclass have more than one subclass
+Multiple inheritance(diamond problem):if the subclass have more than one superclass
+Hybrid inheritance
+
+  3.Abstract Classes and Methods:
+
+Data abstraction is the process of hiding certain details and showing only essential information to the user.
+Abstraction can be achieved with either abstract classes or interfaces 
+
+The abstract keyword is a non-access modifier, used for classes and methods:
+
+Abstract class: is a restricted class that cannot be used to create objects (to access it, it must be inherited from another class).
+
+Abstract method: can only be used in an abstract class, and it does not have a body. The body is provided by the subclass (inherited from).
+
+* Interfaces:
+
+Another way to achieve abstraction in Java, is with interfaces.
+
+An interface is a completely "abstract class" that is used to group related methods with empty bodies:
+
+* Polymorphism:
+
+22.How many feature you can write in a single feature file?
+
+a feature file can have maximum of 10 
+
+23.how many test case can we write in a single feature file ?
+
+The number of test cases you can write in a single feature file depends on various factors, including the complexity of the feature, the granularity of your scenarios, and your team's preferences for structuring feature files. There is no strict rule on the maximum number of test cases per feature file, but it's generally a good practice to keep feature files focused and manageable.
+
+24.What is hooks?
+
+In Cucumber, hooks are defined in the test automation code and are associated with annotations or tags. These hooks execute certain code before or after specific events in the test execution process. Common events include scenario execution, feature execution, and test suite startup or shutdown.
+Here are some common hooks in Cucumber:
+
+Before Hooks:
+
+Executed before the start of each scenario.
+Useful for setting up preconditions, such as initializing the WebDriver, opening a browser, or preparing data.
+import io.cucumber.java.Before;
+
+After Hooks:
+
+Executed after the completion of each scenario.
+Useful for performing cleanup actions, such as closing the browser, logging results, or capturing screenshots.
+
+BeforeStep and AfterStep Hooks:
+
+Executed before and after each step within a scenario.
+Useful for additional setup or cleanup at a finer granularity.
+
+Before and After Hooks for Features:
+
+Executed before the start of each feature or after the completion of each feature.
+Useful for setting up or cleaning up resources at the feature level.
+
+25.what is listeners in selenium?
+
+In Selenium, listeners are event-handling mechanisms that allow you to capture and respond to events that occur during the test execution process. Selenium WebDriver doesn't have built-in support for listeners, but many test frameworks and testing tools provide listener functionality. Listeners are often used for tasks such as logging, reporting, capturing screenshots, or implementing custom behavior based on test events.
+
+Popular test frameworks like TestNG and JUnit provide listener interfaces that you can implement to define custom behavior for different events in the test lifecycle.
+TestNG Listeners:
+
+ITestListener:
+This listener interface provides methods to handle events related to the test execution lifecycle, such as test start, test success, test failure, and test completion.
+
+ISuiteListener:
+This listener interface provides methods to handle events related to the suite execution lifecycle, such as suite start and suite finish.
+
+IInvokedMethodListener:
+This listener interface provides methods to handle events related to the invocation of test methods, such as before and after method invocation.
+
+26.What are java exceptions?
+
+In Java, an exception is an event that occurs during the execution of a program that disrupts the normal flow of instructions.
+
+Java exceptions are divided into two main categories:
+
+*Checked Exceptions (Compile-time Exceptions):
+
+These are exceptions that are checked at compile time, and the compiler ensures that they are handled by the program. If a method may throw a checked exception, the method must declare it using the throws clause, or it must be enclosed within a try-catch block.
+Ex: classNotFoundException,FileNotFoundException,IOException, SQLException,(CISF)
+
+*Unchecked Exceptions (Runtime Exceptions):
+These are exceptions that are not checked at compile time. They usually result from programming errors and are subclasses of RuntimeException.
+Ex: ArthmeticException, ClassCastException,NullPointerException,ArrayIndexOutOfBoundException,IllegalThreadStateException(CCAANI).
+
+27.What is implicit & explicit wait?
+
+implicit wait: wait for the element to be fully loaded in the application.If we give implicit wait for 10sec and the application is loading in 2sec then it does not wait for the remaining 8sec.
+driver.manage().timeout().implicitwait(duration.ofseconds(10))
+
+Explicit wait wait checks whether the particular condition is satisfied or not.
+
+28.what is stale element exception in selenium?
+
+A StaleElementReferenceException is a common exception that occurs in Selenium WebDriver when an element that was previously located on the web page becomes stale or no longer valid
+To handle StaleElementReferenceException, consider the following strategies:
+ 1.Refresh Element Reference:
+ 2.Use WebDriverWait:
+
+29.How to handle child browser?
+
+Handling child browsers or pop-up windows in Selenium involves switching the WebDriver focus from the parent window to the child window.
+Here's how you can handle child browsers in Selenium using Java:
+ 1.Get Handles of All Windows:
+ Retrieve the handles of all open windows using driver.getWindowHandles().
+ Set<String> windowHandles = driver.getWindowHandles();
+
+ 2.Switch to the Desired Window:
+ Iterate through the window handles to find the handle of the child window.
+ for (String handle : windowHandles) {
+    if (!handle.equals(parentWindowHandle)) {
+        driver.switchTo().window(handle);
+        break;
+    }
+ }
+
+30.what is scenario & scenario outline in cucumber?
+Scenario:
+A Scenario in Cucumber represents a specific test case or a set of related test cases. It is written in Gherkin language and consists of a series of steps that describe the behavior of the system.
+
+Scenario Outline:
+A Scenario Outline is a way to run the same scenario with different sets of data. It's particularly useful when you have a repetitive scenario that needs to be executed with various input values. A Scenario Outline uses placeholders (known as data tables or examples) to represent the varying input values.
+
+32.What is BDD framework ?
+BDD (Behavior-driven development) Testing is a technique of agile software development and is as an extension of TDD, i.e., Test Driven Development. In BDD, test cases are written in a natural language that even non-programmers can read.
+
+Test scenarios are written separately in a different file, named as Feature file.
+Tests are written by focusing user stories and system behavior in a layman language.
+Code is subject to be written differently in step definitions file i.e. Java, Python.
+
+36.Which tool are you using for build integration purpose ?
+
+some popular build integration tools used in the software development industry:
+
+Jenkins:
+
+Jenkins is one of the most widely used open-source automation servers for building, testing, and deploying software. It supports a large number of plugins, making it highly customizable and extensible.
+Travis CI:
+
+Travis CI is a cloud-based CI/CD service that integrates with GitHub repositories. It provides easy configuration through a .travis.yml file in the project repository.
+CircleCI:
+
+CircleCI is a cloud-based CI/CD platform that automates the software development process. It integrates with version control systems and supports various programming languages.
+GitLab CI/CD:
+
+GitLab provides built-in CI/CD capabilities within its platform. It allows users to define and manage pipelines directly in their GitLab repositories.
+TeamCity:
+
+TeamCity is a CI/CD server by JetBrains. It offers a user-friendly interface and supports building, testing, and deploying applications.
+Bamboo:
+
+Bamboo is a CI/CD server developed by Atlassian. It integrates with other Atlassian tools like Jira and Bitbucket and supports build and deployment processes.
+GitHub Actions:
+
+GitHub Actions is a CI/CD and automation service provided by GitHub. It allows users to define workflows directly within their GitHub repositories.
+Azure DevOps:
+
+Azure DevOps, formerly known as Visual Studio Team Services (VSTS), provides a set of development tools, including a CI/CD pipeline, for building, testing, and deploying applications.
+Buildkite:
+
+Buildkite is a CI/CD platform that focuses on building scalable and customizable pipelines. It allows users to run builds on their own infrastructure.
+
+37.What is inheritance ?
+
+In Java, it is possible to inherit attributes and methods from one class to another. We group the "inheritance concept" into two categories:
+
+subclass (child) - the class that inherits from another class
+superclass (parent) - the class being inherited from
+To inherit from a class, use the extends keyword.
+
+super():is used to call the constructor of super class from sub class
+
+types
+Single level inheritance: inheritance of one level
+Multi level inheritance: inheritance of more than one level
+Heirarchial inheritance:if the superclass have more than one subclass
+Multiple inheritance(diamond problem):if the subclass have more than one superclass
+Hybrid inheritance
+
+
